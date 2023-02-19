@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./empresa.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Document</title>
+</head>
+<body  >
+    <div class="menu_principal">
+        
+        <div class="div_imglogo">
+            <img src="./imagenes/logo2.png" alt="">
+        </div>
+        <div class="div_barrabusqueda">
+            <input type="search" placeholder="¿Qué estas buscando?">
+            <button style="cursor:pointer">
+                <span class="material-icons" id="btn_busqueda">
+                    search
+                </span>
+            </button>
+        </div>
+        <!--iconos del menu principal-->
+        <div class="div_opciones">
+            <div class="div_isesion" id="div_isesion" >
+                <span class="material-icons" id="icon_isesion">
+                    account_circle
+                </span>
+                 
+                
+                 
+            </div>
+            <div class="div_carrito" id="div_carrito">
+                <span class="material-icons" id="icon_carrrito">
+                    local_shipping
+                </span>
+               
+                
+            </div>
+            <div class="div_carritocompras" id="div_carritocompras">
+                <span class="material-icons" id="icon_carritocompras">
+                    shopping_cart
+                </span>
+                
+               
+            </div>
+            
+        </div>
+        <!---->
+       
+    </div>
+    <!--SUBMENÚ-->
+    <div class="submenu">
+        <ul class="lish_categorias"> 
+            <li><a href="#" id="s_hombres">Hombres</a></li>
+            <li><a href="#" id="s_mujeres">Mujeres</a></li>
+            <li><a href="#" id="s_niños">Niños</a></li>
+            <li><a href="#" id="s_niñas">Niñas</a></li>
+            <li><a href="#" id="s_marcas" >Marcas</a></li>
+        </ul>
+    </div>
+    <!-- LOGIN-->
+    <div class="div_login" id="div_login" style="display:none">
+        <form action="./login_usuario.php" method="post" id="form_login">
+            <div class="div_elogin">
+                <img src="./imagenes/logo.jpg" alt="">
+                <h1>Inicia sesión</h1>
+                    <span class="material-icons" id="iconcerrar_login">
+                        close
+                    </span>
+                <br>
+            </div>  
+           <label for="id" >Identificación</label>
+            <input type="text" id="id" name="id_login" placeholder="Ingrese su identificación">
+            <label for="contraseña">contraseña</label>
+            <input type="password" id="contraseña" name="passw_login" placeholder="Ingrese su contraseña">
+            <button type="submit" >INGRESAR</button>
+            
+            <pre>
+                              O
+                ¿No tienes cuenta?
+            </pre>
+            <p class="label_3" id="lbl_registrate"><u>Registrate</u></p>
+        </form>
+    </div>
+    <!--FORMULARIO REGISTRO-->
+    <div class="div_formulario" style="display:none" id="div_formulario">
+        <form action="./registro.php" method="post" class="form_registro" >
+            <div class="div_encabezadoform">
+                <span class="material-icons" id="cerrar_formulario">
+                    close
+                </span>
+                <img src="./imagenes/logo.jpg" alt="">
+                <h1>Regístro nuevo</h1> 
+            </div>
+           
+            <label for="id">Identificación</label>
+            <input type="tel" id="id" name="id_usuario" max="10" required (en-US) placeholder="Ingresa tu identificación">
+    
+            <label for="primer_nombre">Nombre</label>
+            <input type="text" id="primer_nombre" name="nombre_usuario" required placeholder="Ingresa tu nombre">
+        
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido_usuario" required placeholder="Ingresa tu apellido">
+        
+        
+            <label for="fecha_nac">Fecha nacimiento</label>
+            <input type="date" id="fecha_nac" name="fecha_nac_usuario"  required>
+        
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo_usuario" required placeholder="Ingresa tu correo">
+        
+            <label for="conf_correo">Correo electrónico</label>
+            <input type="email" id="conf_correo" name="cofcorreo_usuario" placeholder="Vuelve a ingresa tu correo">
+        
+            <label for="contraseña">Contraseña</label>
+            <input type="password" id="contraseña" name="password_usuario" required placeholder="Ingresa tu contraseña">
+             
+            <label for="contraseña">Contraseña</label>
+            <input type="password" id="contraseña" name="confpass_usuario" required placeholder="Vuelve a ingresar tu contraseña">
+            
+        
+            <button type="submit" >Enviar</button>
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <div>
+                  An example alert with an icon
+                </div>
+              </div>
+
+        </form>
+    </div>
+    <!--CUERPO-->
+    <div class="div_cuerpo" >
+        <!--SLIDER-->
+        <div class="div_slider" >
+            <ul>
+                <li><img src="./imagenes/slider1.jpg" alt=""></li>
+                <li><img src="./imagenes/slider2.jpg" alt=""></li>
+                <li><img src="./imagenes/slider3.jpg" alt=""></li>
+                <li><img src="./imagenes/slider4.jpg" alt=""></li>
+                <li><img src="./imagenes/slider5.jpg" alt=""></li>
+            </ul>
+        </div>
+        
+       
+        <h2>
+            <span class="material-icons">
+                grade
+            </span>
+            Destacados
+        </h2>
+       
+        <div class="div_destacados">
+            <div class="producto_1">
+                <img src="./imagenes/producto1.jpg" alt="">
+                <label class="lbl_marca" for="">Puma</label>
+                <label for="">zapatillas puma casual para hombre</label>
+                <p>$259,900</p>
+                <button>agregar al carrito</button>
+            </div>
+            <div class="producto_2">
+                <img src="./imagenes/producto2.jpg" alt="">
+                <label class="lbl_marca" for="">Rebook</label>
+                <label for="">Rebook lite 3.0 tenis de hombre </label>
+                <p>$159,900</p>
+                <button>agregar al carrito</button>
+            </div>
+            <div class="producto_3">
+                <img src="./imagenes/producto3.jpg" alt="">
+                <label class="lbl_marca" for="">Adidas</label>
+                <label for="">zapatillas deportivas marca adidas</label>
+                <p>$289,900</p>
+                <button>agregar al carrito</button>
+            </div>
+            <div class="producto_4">
+                <img src="./imagenes/producto4.jpg" alt="">
+                <label class="lbl_marca" for="">Puma</label>
+                <label for="">zapatos puma casual para hombre</label>
+                <p>$179,900</p>
+                <button>agregar al carrito</button>
+            </div>
+            <div class="producto_5">
+                <img src="./imagenes/producto5.jpg" alt="">
+                <label class="lbl_marca"> Nike</label>
+                <label for="">zapatillas deportivas nike suketoII</label>
+                <p>$269,900</p>
+                <button>agregar al carrito</button>
+            </div>
+            <div class="producto_6">
+                <img src="./imagenes/producto6.jpg" alt="">
+                <label class="lbl_marca" for="">New Balance</label>
+                <label for="">zapatillas deportivas mujer  new balance</label>
+                <p>$189,900</p>
+                <button>agregar al carrito</button>
+            </div>
+            <div class="producto_7">
+                <img src="./imagenes/producto7.jpg" alt="">
+                <label class="lbl_marca"> Nike</label>
+                <label for="">zapatillas deportivas nike zoom</label>
+                <p>$279,900</p>
+                <button>agregar al carrito</button>
+            </div>
+            <div class="producto_8">
+                <img src="./imagenes/producto8.jpg" alt="">
+                <label class="lbl_marca" for="">Lacoste</label>
+                <label for="">zapatos casuales unisex lacoste de lona</label>
+                <p>$199,900</p>
+                <button>agregar al carrito</button>
+            </div>
+        </div>
+       
+        <!-----------------------CATEGORIAS------------------------->
+        <div class="div_categorias" id="div_categorias">
+            <div class="div_shombres" id="div_chombres" style="display: none;">
+                <ul class="lisv_cathombre"> 
+                    <li><a href="#" >Tenis Deportivos</a></li>
+                    <li><a href="#" id="s_mujeres">Guayos</a></li>
+                    
+                </ul>
+            </div>
+            <div class="div_smujeres" id="div_cmujeres">
+                <ul class="lisv_catmujeres"> 
+                    <li><a href="#" >Tenis Deportivos</a></li>
+                    <li><a href="#" >Guayos</a></li>
+                    
+                </ul>
+            </div>
+            <div class="div_niños" id="div_cniños" >
+                <ul class="lisv_catniños"> 
+                    <li><a href="#" >Tenis Deportivos</a></li>
+                    <li><a href="#" >Guayos</a></li>
+                    
+                </ul>
+            </div>
+            <div class="div_niñas" id="div_cniñas" ">
+                <ul class="lisv_catniñas"> 
+                    <li><a href="#" >Tenis Deportivos</a></li>
+                    <li><a href="#" >Guayos</a></li>
+                    
+                </ul>
+            </div>
+            <div class="div_smarcas" id="div_cmarcas" >
+                <ul class="lisv_catmarcas"> 
+                    <li><a href="#" >NIKE</a></li>
+                    <li><a href="#" >PUMA</a></li>
+                    <li><a href="#" >ADIDAS</a></li>
+                    <li><a href="#" >REBOOK</a></li>
+                    <li><a href="#" >NEW BALANCE</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!--DATOS EMPRESA-->
+        <div class="div_datos">
+            <p>contactanos 018000980898 o www.sshop@hotmail.com</p>
+            <div class="div_redes">
+                <button>
+                    <img src="./imagenes/facebook.png" alt="">
+                </button>
+                <button>
+                    <img src="./imagenes/instagram.png" alt="">
+                </button>
+                <button>
+                    <img src="./imagenes/twiter.png" alt="">
+                </button>
+                
+                
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
