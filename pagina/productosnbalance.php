@@ -36,13 +36,16 @@
             </button>
         </div>
         <!--iconos del menu principal-->
+        <!--iconos del menu principal-->
         <div class="div_opciones">
+            <p>iniciar sesión</p>
             <div class="div_isesion" id="div_isesion" >
-                <span class="material-icons" id="icon_isesion">
+                
+                <span  class="material-icons" id="icon_isesion">
                     account_circle
-                </span> 
+                </span>
             </div>     
-    
+            <p>carrito</p>
             <div class="div_carritocompras" id="div_carritocompras">
                 <span class="material-icons" id="icon_carritocompras">
                     shopping_cart

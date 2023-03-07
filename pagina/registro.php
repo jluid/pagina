@@ -2,7 +2,7 @@
     include('db.php');
     $con=conectar();
 
-   $id_usuario=$_POST['id_usuario'];
+    $id_usuario=$_POST['id_usuario'];
     $nombre=$_POST['nombre_usuario'];
     $apellido=$_POST['apellido_usuario'];
     $fecha_nac=$_POST['fecha_nac_usuario'];
@@ -21,7 +21,7 @@
             echo'
             <script>
             alert("las contraseñas no coinciden"); 
-            window.location = "index.html";
+            window.location = "index.php";
             </script>
            
             ';
@@ -36,9 +36,10 @@
      $verificar_id = mysqli_query($con,"SELECT * FROM usuarios WHERE id_usuario='$id_usuario'");
 
      if(mysqli_num_rows($verificar_id)>0){
+        
         echo'
         <script>
-            window.location = "index.html";   
+            window.location = "index.php";   
             alert("ya existe un usuario con esta identificacion, por favor intenta con otra identificación"); 
         </script>';
        exit();
@@ -46,13 +47,13 @@
      $ejecutar = mysqli_query($con,$sql);
 
     if($ejecutar){
-        usuario_registrado($nombre);
+        cargarpagina();
         
     }else{
         echo'
         <script>
             alert("registro no realizado, por favor intentelo otra vez!!!");
-            window.location = "index.html";
+            window.location = "index.php";
         </script>
         ';
     }

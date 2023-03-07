@@ -1,9 +1,3 @@
-
-<?php
-  include('db.php');
-  $con=conectar();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilosproductos.css">
     <title>Document</title>
 </head>
 <body  >
@@ -26,6 +20,7 @@
               
         </div>
         <div class="div_barrabusqueda" >
+            
             <input type="search" placeholder="¿Qué estas buscando?" id="id_barrabuscar">
             <button style="cursor:pointer" id="id_lupa">
                 <span class="material-icons" id="btn_busqueda">
@@ -59,11 +54,11 @@
     <!--SUBMENÚ-->
     <div class="submenu">
         <ul class="lish_categorias"> 
-            <li id="cat_hombres"><a  id="s_hombres">Hombres</a></li>
-            <li id="cat_mujeres"><a  id="s_mujeres">Mujeres</a></li>
-            <li id="cat_niños"><a  id="s_niños">Niños</a></li>
-            <li id="cat_niñas"><a  id="s_niñas">Niñas</a></li>
-            <li id="cat_marcas"><a  id="s_marcas" >Marcas</a></li>
+            <li id="cat_hombres"><a href="#" id="s_hombres">Hombres</a></li>
+            <li id="cat_mujeres"><a href="#" id="s_mujeres">Mujeres</a></li>
+            <li id="cat_niños"><a href="#" id="s_niños">Niños</a></li>
+            <li id="cat_niñas"><a href="#" id="s_niñas">Niñas</a></li>
+            <li id="cat_marcas"><a href="#" id="s_marcas" >Marcas</a></li>
         </ul>
     </div>
     <!-- LOGIN-->
@@ -78,7 +73,7 @@
                 <br>
             </div>  
            <label for="id" >Identificación</label>
-            <input type="text" id="id_login" name="id_login" placeholder="Ingrese su identificación">
+            <input type="text" id="id" name="id_login" placeholder="Ingrese su identificación">
             <label for="contraseña">contraseña</label>
             <input type="password" id="contraseña" name="passw_login" placeholder="Ingrese su contraseña">
             <button type="submit" >INGRESAR</button>
@@ -88,11 +83,10 @@
                 ¿No tienes cuenta?
             </pre>
             <p class="label_3" id="lbl_registrate"><u>Registrate</u></p>
-            
         </form>
     </div>
-    <!--FORMULARIO REGISTRO-->
-    <div class="div_formulario" style="display:none" id="div_formulario">
+     <!--FORMULARIO REGISTRO-->
+     <div class="div_formulario" style="display:none" id="div_formulario">
         <form action="./registro.php" method="post" class="form_registro" >
             <div class="div_encabezadoform">
                 <span class="material-icons" id="cerrar_formulario">
@@ -103,7 +97,7 @@
             </div>
            
             <label for="id">Identificación</label>
-            <input type="tel" id="id_usuario" name="id_usuario" max="10" required (en-US) placeholder="Ingresa tu identificación">
+            <input type="tel" id="id" name="id_usuario" max="10" required (en-US) placeholder="Ingresa tu identificación">
     
             <label for="primer_nombre">Nombre</label>
             <input type="text" id="primer_nombre" name="nombre_usuario" required placeholder="Ingresa tu nombre">
@@ -125,7 +119,7 @@
             <input type="password" id="contraseña" name="password_usuario" required placeholder="Ingresa tu contraseña">
              
             <label for="contraseña">Contraseña</label>
-            <input type="password" id="conf_contraseña" name="confpass_usuario" required placeholder="Vuelve a ingresar tu contraseña">
+            <input type="password" id="contraseña" name="confpass_usuario" required placeholder="Vuelve a ingresar tu contraseña">
             
         
             <button type="submit" id="btn_enviarf" >Enviar</button>
@@ -134,82 +128,31 @@
     </div>
     <!--CUERPO-->
     <div class="div_cuerpo" >
-        <!--SLIDER-->
-        <div class="div_slider" >
-            <ul>
-                <li><img src="./imagenes/slider1.jpg" alt=""></li>
-                <li><img src="./imagenes/slider2.jpg" alt=""></li>
-                <li><img src="./imagenes/slider3.jpg" alt=""></li>
-                <li><img src="./imagenes/slider4.jpg" alt=""></li>
-                <li><img src="./imagenes/slider5.jpg" alt=""></li>
-            </ul>
-        </div>
         
         <h2>
             <span class="material-icons">
                 grade
             </span>
-            Destacados
+            Niñas
         </h2>
        <!--DIV DESTACADOS-->
         <div class="div_destacados">
             <div class="producto_1">
-                <img src="./imagenes/producto1.jpg" alt="">
-                <label class="lbl_marca" for="">Puma</label>
-                <label for="">zapatillas puma casual para hombre</label>
+                <img src="./imagenes/Reebok 32.jpg" alt="">
+                <label class="lbl_marca" for="">Rebook</label>
+                <label for="">Rebook colegial para niña</label>
                 <p>$259,900</p>
-                <button id="btn_agregarc" onclick="cargarpagina();">agregar al carrito</button>
+                <button id="btn_agregarc">agregar al carrito</button>
             </div>
             <div class="producto_2">
-                <img src="./imagenes/producto2.jpg" alt="">
-                <label class="lbl_marca" for="">Rebook</label>
-                <label for="">Rebook lite 3.0 tenis de hombre </label>
+                <img src="./imagenes/new balance niña.jpg" alt="">
+                <label class="lbl_marca" for="">New Balance</label>
+                <label for="">New balamce color rosado para niña </label>
                 <p>$159,900</p>
                 <button id="btn_agregarc">agregar al carrito</button>
             </div>
-            <div class="producto_3">
-                <img src="./imagenes/adidas_3.jpg" alt="">
-                <label class="lbl_marca" for="">Adidas</label>
-                <label for="">zapatillas deportivas marca adidas</label>
-                <p>$289,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_4">
-                <img src="./imagenes/producto4.jpg" alt="">
-                <label class="lbl_marca" for="">Puma</label>
-                <label for="">zapatos puma casual para hombre</label>
-                <p>$179,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_5">
-                <img src="./imagenes/producto5.jpg" alt="">
-                <label class="lbl_marca"> Nike</label>
-                <label for="">zapatillas deportivas nike suketoII</label>
-                <p>$269,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_6">
-                <img src="./imagenes/producto6.jpg" alt="">
-                <label class="lbl_marca" for="">New Balance</label>
-                <label for="">zapatillas deportivas mujer  new balance</label>
-                <p>$189,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_7">
-                <img src="./imagenes/producto7.jpg" alt="">
-                <label class="lbl_marca"> Nike</label>
-                <label for="">zapatillas deportivas nike zoom</label>
-                <p>$279,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_8">
-                <img src="./imagenes/producto8.jpg" alt="">
-                <label class="lbl_marca" for="">Lacoste</label>
-                <label for="">zapatos casuales unisex lacoste de lona</label>
-                <p>$199,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-                
-            </div>
+          
+            
            
         </div>
         <!--OPCIONES DE COMPRA-->
@@ -220,8 +163,7 @@
                         error   
                     </span>
                 </div>
-                <div>
-                    <label>Selecciona tus opciones para agregar el producto al carrito</label></div>
+                <div><label>Selecciona tus opciones para agregar el producto al carrito</label></div>
                 <div>  
                     <span class="material-icons" id="iconcerrar_compra" style="cursor: pointer;" >
                     close
@@ -230,11 +172,12 @@
               
             </div>
             <div class="div_descripcioncompra">
-                <div class="producto_1">
-                    <img src="./imagenes/producto1.jpg" alt="">
-                    <label class="lbl_marca" for="">Puma</label>
-                    <label for="">zapatillas puma casual para hombre</label>
-                    <p>$259,900</p>
+                <div class="producto_8.1">
+                    <img src="./imagenes/producto8.jpg" alt="" style="width: 20%;">
+                    <label class="lbl_marca" for="">Lacoste</label>
+                    <br>
+                    <label for="">zapatos casuales unisex lacoste de lona</label>
+                    <p>$199,900</p>
                 </div>
             </div>
             <div class="div_tallascompra">
@@ -242,13 +185,11 @@
                 <input type="number"  min="38" max="42">
                 <label for="Color">Color</label>
                 <input type="color" id="" class="radio_color" checked>
-                <label>Cantidad  </label>
-                <input type="number"  min="1" max="100">
+
             </div>
             <div class="div_btnagregarcar">
                 <button id="btn_agregarcarrito">AGREGAR AL CARRITO</button> 
             </div>
-            
         </div>
        
        
@@ -295,6 +236,7 @@
     
             
             <div class="respmenu" id="div_mniñas">
+
                 <nav>
                     <ul class="listadesplegable4" id="listadesplegable4" style="display: none;"> 
                         <b><li><a href="#">Deportivos</a></li>
@@ -306,12 +248,13 @@
                 </nav>
             </div>
     
+            
             <div class="respmenu" id="div_m">
 
                 <nav>
                  
                     <ul class="listadesplegable5" id="listadesplegable5" style="display: none;"> 
-                        <b><li><a href="productosnike.php/" id="id_nike">Nike</a></li>
+                        <b><li><a href="productosnike.php" id="id_nike">Nike</a></li>
                            <li><a href="productosadidas.php" id="id_adidas">Adidas</a></li>
                            <li><a href="productospuma.php" id="id_puma" >Puma</a></li>
                            <li><a href="productosnbalance.php " id="id_newbalance">New Balance</a></li>
@@ -326,21 +269,23 @@
             
     
         <!--mensaje-->
-        <div class="div_msagregarp_close" id="div_msagregarp_close" style="display: none;">
-            <div class="div_error">
-                <span class="material-icons" id="icn_cerrarmsagregarp_close" > 
-                    error   
-                </span>
-            </div>
+        <div class="div_msagregarp_close" id="div_msagregarp_close" >
             <div>
-                <label>Producto agregado con exito</label>
-            
-            </div>
-            <div>  
-                <span class="material-icons" id="iconcerrar_msg" style="cursor: pointer;" >
-                close
+               <span class="material-icons" id="icn_cerrarmsagregarp" > 
+                    check_circle   
                 </span>
             </div>
+                
+            <div>
+               <label>Producto agregado con exito</label>
+            </div>
+            
+          <div>
+               <span class="material-icons" id="iconcerrar_msg" style="cursor: pointer;" >
+                    close
+               </span>
+          </div> 
+     
         </div>
         <!--DATOS EMPRESA-->
         <div class="div_datos">
@@ -366,4 +311,3 @@
     <script src="./empresa.js"></script>
 </body>
 </html>
-

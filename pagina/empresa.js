@@ -177,9 +177,7 @@ function mostrarproductos(){
     let newbalalnce="new balance";
   
     if(value==nike){
-       
-        document.write('<?php echo cargarpagina(); ?>');
-
+        window.location="productosnike.php"
         
     }else if(value==adidas){
        
@@ -230,7 +228,7 @@ function cerrarLogin(){
 }
 function cerrarFormulario(){
     document.getElementById('div_formulario').style.display = 'none';
-    window.location="index.html";
+    window.location="index.php";
 }
 function mostrarLogin(){
    

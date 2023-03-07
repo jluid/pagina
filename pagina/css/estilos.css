@@ -598,7 +598,7 @@ body{
   }
    
   .div_mostrarcompra button{
-    background-color: greenyellow;
+    background-color: skyblue;
     color: white;
     display:flex;
     align-items: center;
@@ -647,7 +647,7 @@ body{
   position: absolute;
   top: 60%;
   left: 30%;
-  background-color: rgb(53, 250, 168);
+  background-color: rgb(13, 201, 123);
   font-size: 20px;
 }
 

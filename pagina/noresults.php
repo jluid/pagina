@@ -1,11 +1,3 @@
-<?php
-  include('db.php');
-  $con=conectar();
-
-
-  $query = "SELECT marca_producto, descripcion_producto, precio,genero,imagen FROM `productos` WHERE marca_producto='rebook'";
-  $result = mysqli_query($con, $query);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +27,7 @@
                 </span>
             </button>
         </div>
+        <!--iconos del menu principal-->
         <!--iconos del menu principal-->
         <div class="div_opciones">
             <p>iniciar sesión</p>
@@ -68,134 +61,79 @@
             <li id="cat_marcas"><a href="#" id="s_marcas" >Marcas</a></li>
         </ul>
     </div>
-    <!-- LOGIN-->
-    <div class="div_login" id="div_login" style="display:none">
-        <form action="./login_usuario.php" method="post" id="form_login">
-            <div class="div_elogin">
-                <img src="./imagenes/logo.jpg" alt="">
-                <h1>Inicia sesión</h1>
-                    <span class="material-icons" id="iconcerrar_login">
-                        close
-                    </span>
-                <br>
-            </div>  
-           <label for="id" >Identificación</label>
-            <input type="text" id="id" name="id_login" placeholder="Ingrese su identificación">
-            <label for="contraseña">contraseña</label>
-            <input type="password" id="contraseña" name="passw_login" placeholder="Ingrese su contraseña">
-            <button type="submit" >INGRESAR</button>
-            
-            <pre>
-                        O
-                ¿No tienes cuenta?
-            </pre>
-            <p class="label_3" id="lbl_registrate"><u>Registrate</u></p>
-        </form>
-    </div>
-    <!--FORMULARIO REGISTRO-->
-    <div class="div_formulario" style="display:none" id="div_formulario">
-        <form action="./registro.php" method="post" class="form_registro" >
-            <div class="div_encabezadoform">
-                <span class="material-icons" id="cerrar_formulario">
+ <!-- LOGIN-->
+ <div class="div_login" id="div_login" style="display:none">
+    <form action="./login_usuario.php" method="post" id="form_login">
+        <div class="div_elogin">
+            <img src="./imagenes/logo.jpg" alt="">
+            <h1>Inicia sesión</h1>
+                <span class="material-icons" id="iconcerrar_login">
                     close
                 </span>
-                <img src="./imagenes/logo.jpg" alt="">
-                <h1>Regístro nuevo</h1> 
-            </div>
+            <br>
+        </div>  
+       <label for="id" >Identificación</label>
+        <input type="text" id="id" name="id_login" placeholder="Ingrese su identificación">
+        <label for="contraseña">contraseña</label>
+        <input type="password" id="contraseña" name="passw_login" placeholder="Ingrese su contraseña">
+        <button type="submit" >INGRESAR</button>
         
-            <label for="id">Identificación</label>
-            <input type="tel" id="id" name="id_usuario" max="10" required (en-US) placeholder="Ingresa tu identificación">
+        <pre>
+                    O
+            ¿No tienes cuenta?
+        </pre>
+        <p class="label_3" id="lbl_registrate"><u>Registrate</u></p>
+    </form>
+</div>
+<!--FORMULARIO REGISTRO-->
+<div class="div_formulario" style="display:none" id="div_formulario">
+    <form action="./registro.php" method="post" class="form_registro" >
+        <div class="div_encabezadoform">
+            <span class="material-icons" id="cerrar_formulario">
+                close
+            </span>
+            <img src="./imagenes/logo.jpg" alt="">
+            <h1>Regístro nuevo</h1> 
+        </div>
+    
+        <label for="id">Identificación</label>
+        <input type="tel" id="id" name="id_usuario" max="10" required (en-US) placeholder="Ingresa tu identificación">
 
-            <label for="primer_nombre">Nombre</label>
-            <input type="text" id="primer_nombre" name="nombre_usuario" required placeholder="Ingresa tu nombre">
+        <label for="primer_nombre">Nombre</label>
+        <input type="text" id="primer_nombre" name="nombre_usuario" required placeholder="Ingresa tu nombre">
+    
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido_usuario" required placeholder="Ingresa tu apellido">
+    
+    
+        <label for="fecha_nac">Fecha nacimiento</label>
+        <input type="date" id="fecha_nac" name="fecha_nac_usuario"  required  min="1950-01-01" max="2004-12-31">
+    
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo_usuario" required placeholder="Ingresa tu correo">
+    
+        <label for="conf_correo">Correo electrónico</label>
+        <input type="email" id="conf_correo" name="cofcorreo_usuario" placeholder="Vuelve a ingresa tu correo">
+    
+        <label for="contraseña">Contraseña</label>
+        <input type="password" id="contraseña" name="password_usuario" required placeholder="Ingresa tu contraseña">
         
-            <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido_usuario" required placeholder="Ingresa tu apellido">
+        <label for="contraseña">Contraseña</label>
+        <input type="password" id="contraseña" name="confpass_usuario" required placeholder="Vuelve a ingresar tu contraseña">
         
+    
+        <button type="submit" id="btn_enviarf" >Enviar</button>
         
-            <label for="fecha_nac">Fecha nacimiento</label>
-            <input type="date" id="fecha_nac" name="fecha_nac_usuario"  required  min="1950-01-01" max="2004-12-31">
-        
-            <label for="correo">Correo electrónico</label>
-            <input type="email" id="correo" name="correo_usuario" required placeholder="Ingresa tu correo">
-        
-            <label for="conf_correo">Correo electrónico</label>
-            <input type="email" id="conf_correo" name="cofcorreo_usuario" placeholder="Vuelve a ingresa tu correo">
-        
-            <label for="contraseña">Contraseña</label>
-            <input type="password" id="contraseña" name="password_usuario" required placeholder="Ingresa tu contraseña">
-            
-            <label for="contraseña">Contraseña</label>
-            <input type="password" id="contraseña" name="confpass_usuario" required placeholder="Vuelve a ingresar tu contraseña">
-            
-        
-            <button type="submit" id="btn_enviarf" >Enviar</button>
-            
-        </form>
-    </div>
+    </form>
+</div>
     <!--CUERPO-->
     <div class="div_cuerpo" >
         
-        <h2>
-            <span class="material-icons">
-                grade
-            </span>
-            Rebook
-        </h2>
        <!--DIV DESTACADOS-->
         <div class="div_destacados">
-            <?php foreach ($result as $row) { ?>
-                    
-                <div class="producto_1">
-                    <img src="<?php echo $row['imagen'];?>" alt="">
-                    <label class="lbl_marca" for="">Rebook</label>
-                    <label for=""><?php echo $row['descripcion_producto']; ?></label>
-                    <p><?php echo $row['precio'];?></p>
-                    <button id="btn_agregarc">agregar al carrito</button>
-                </div>
-                    
-            <?php } ?>
+            <p>No se encontraron resultados......</p>
         </div>
-        <!--OPCIONES DE COMPRA-->
-        <div class="div_mostrarcompra" id="mostrar_compra" style="display: none;" >
-            <div class="div_encabezadocompra">
-                <div class="div_error">
-                    <span class="material-icons"  > 
-                        error   
-                    </span>
-                </div>
-                <div><label>Selecciona tus opciones para agregar el producto al carrito</label></div>
-                <div>  
-                    <span class="material-icons" id="iconcerrar_compra" style="cursor: pointer;" >
-                    close
-                    </span>
-                </div>
-              
-            </div>
-            <div class="div_descripcioncompra">
-                <div class="producto_8.1">
-                    <img src="./imagenes/producto8.jpg" alt="" style="width: 20%;">
-                    <label class="lbl_marca" for="">Lacoste</label>
-                    <br>
-                    <label for="">zapatos casuales unisex lacoste de lona</label>
-                    <p>$199,900</p>
-                </div>
-            </div>
-            <div class="div_tallascompra">
-                <label>Seleccione una talla  </label>
-                <input type="number"  min="38" max="42">
-                <label for="Color">Color</label>
-                <input type="color" id="" class="radio_color" checked>
-
-            </div>
-            <div class="div_btnagregarcar">
-                <button id="btn_agregarcarrito">AGREGAR AL CARRITO</button> 
-            </div>
-        </div>
-       
-       
         <!-----------------------CATEGORIAS------------------------->
-       
            <div class="div_categorias">
             <div class="respmenu" id="div_mhombres">
                 <nav>
@@ -267,8 +205,6 @@
             </div>
         
            </div>
-            
-    
         <!--mensaje-->
         <div class="div_msagregarp_close" id="div_msagregarp_close" >
             <div>

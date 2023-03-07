@@ -629,7 +629,7 @@ body{
   }
    
   .div_mostrarcompra button{
-    background-color: greenyellow;
+    background-color: rgb(248, 251, 38);
     color: white;
     display:flex;
     align-items: center;
@@ -714,7 +714,7 @@ body{
    
    /*botones del carrito de compras*/
    .div_botones button{
-    background-color: #f2ff00;
+    background-color:skyblue;
     width: fit-content;
     height: 40px;
     padding: 9px;

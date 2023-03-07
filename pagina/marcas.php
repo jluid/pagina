@@ -1,10 +1,3 @@
-<?php
-  include('db.php');
-  $con=conectar();
-
-  $query = "SELECT marca_producto, descripcion_producto, precio,genero,imagen FROM `productos` WHERE marca_producto='nike'";
-  $result = mysqli_query($con, $query);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +11,7 @@
     <title>Document</title>
 </head>
 <body  >
+    <!-------MENÚ PRINCIPAL------------>
     <div class="menu_principal">
         
         <div class="div_imglogo">
@@ -51,10 +45,6 @@
             </div>
             
         </div>
-        <div class="alerta_close" id="alerta">
-            <h6>Registro Exitoso!</h6>
-        </div>
-        <!---->
        
     </div>
     <!--SUBMENÚ-->
@@ -139,63 +129,57 @@
             <span class="material-icons">
                 grade
             </span>
-            Nike
+            Marcas
         </h2>
-          <!--DIV DESTACADOS-->
-          <div class="div_destacados">
-            <?php foreach ($result as $row) { ?>
-                    
-                <div class="producto_1">
-                    <img src="<?php echo $row['imagen'];?>" alt="">
-                    <label class="lbl_marca" for="">Nike</label>
-                    <label for=""><?php echo $row['descripcion_producto']; ?></label>
-                    <p><?php echo $row['precio'];?></p>
-                    <button id="btn_agregarc">agregar al carrito</button>
+        <!--DIV DESTACADOS-->
+        <div >
+               <div class="div_marcas">
+                <button id="btn_marcaadidas"><img src="./imagenes/adidas.jpg" alt=""></button>                 
+                <button id="btn_marcapuma"> <img src="./imagenes/puma.png" alt=""></button>
+                <button id="btn_marcanike"> <img src="./imagenes/nike.jpg" alt=""></button>
+                <button id="btn_marcarebook"><img src="./imagenes/rebook.png" alt=""></button>
+                <button id="btn_marcanbalance"> <img src="./imagenes/nbalance.png" alt=""></button>
+               </div>
+           
+        </div>
+        <!--OPCIONES DE COMPRA-->
+        <div class="div_mostrarcompra" id="mostrar_compra" style="display: none;" >
+            <div class="div_encabezadocompra">
+                <div class="div_error">
+                    <span class="material-icons"  > 
+                        error   
+                    </span>
                 </div>
-                    
-            <?php } ?>
-        </div>
-      <!--OPCIONES DE COMPRA-->
-      <div class="div_mostrarcompra" id="mostrar_compra" style="display: none;" >
-        <div class="div_encabezadocompra">
-            <div class="div_error">
-                <span class="material-icons"  > 
-                    error   
-                </span>
+                <div><label>Selecciona tus opciones para agregar el producto al carrito</label></div>
+                <div>  
+                    <span class="material-icons" id="iconcerrar_compra" style="cursor: pointer;" >
+                    close
+                    </span>
+                </div>
+              
             </div>
-            <div><label>Selecciona tus opciones para agregar el producto al carrito</label></div>
-            <div>  
-                <span class="material-icons" id="iconcerrar_compra" style="cursor: pointer;" >
-                close
-                </span>
+            <div class="div_descripcioncompra">
+                <div class="producto_8.1">
+                    <img src="./imagenes/producto8.jpg" alt="" style="width: 20%;">
+                    <label class="lbl_marca" for="">Lacoste</label>
+                    <br>
+                    <label for="">zapatos casuales unisex lacoste de lona</label>
+                    <p>$199,900</p>
+                </div>
             </div>
-          
-        </div>
-        <div class="div_descripcioncompra">
-            <div class="producto_8.1">
-                <img src="./imagenes/producto8.jpg" alt="" style="width: 20%;">
-                <label class="lbl_marca" for="">Lacoste</label>
-                <br>
-                <label for="">zapatos casuales unisex lacoste de lona</label>
-                <p>$199,900</p>
-            </div>
-        </div>
-        <div class="div_tallascompra">
-            <label>Seleccione una talla  </label>
-            <input type="number"  min="38" max="42">
-            <label for="Color">Color</label>
-            <input type="color" id="" class="radio_color" checked>
+            <div class="div_tallascompra">
+                <label>Seleccione una talla  </label>
+                <input type="number"  min="38" max="42">
+                <label for="Color">Color</label>
+                <input type="color" id="" class="radio_color" checked>
 
+            </div>
+            <div class="div_btnagregarcar">
+                <button id="btn_agregarcarrito">AGREGAR AL CARRITO</button> 
+            </div>
         </div>
-        <div class="div_btnagregarcar">
-            <button id="btn_agregarcarrito">AGREGAR AL CARRITO</button> 
-        </div>
-    </div>
-   
-   
-    <!-----------------------CATEGORIAS------------------------->
-   
-       <div class="div_categorias">
+        <!-----------------------CATEGORIAS------------------------->
+        <div class="div_categorias">
         <div class="respmenu" id="div_mhombres">
             <nav>
                 <ul class="listadesplegable1" id="listadesplegable1" style="display: none;"> 
@@ -209,20 +193,20 @@
 
         <div class="respmenu" id="div_mmujeres">
             <nav>
-             
+                
                 <ul class="listadesplegable2" id="listadesplegable2" style="display: none;"> 
                     <b><li><a href="#">Deportivos</a></li>
-                     <li><a href="#">Tacones</a></li>
-                     <li><a href="#">Casuales</a></li>
-                     <li><a href="#">Formales</a></li></b> 
-                 </ul>
-              
+                        <li><a href="#">Tacones</a></li>
+                        <li><a href="#">Casuales</a></li>
+                        <li><a href="#">Formales</a></li></b> 
+                    </ul>
+                
             </nav>
         </div>
 
         <div class="respmenu" id="div_mniños">
             <nav>
-             
+                
                 <ul class="listadesplegable3" id="listadesplegable3" style="display: none;"> 
                     <b> <li><a href="#">Deportivos</a></li>
                         <li><a href="#">Escolar</a></li>
@@ -230,7 +214,7 @@
                         <li><a href="#">Formales</a></li> 
                     </b>
                 </ul> 
-              
+                
             </nav>
         </div>
 
@@ -240,11 +224,11 @@
             <nav>
                 <ul class="listadesplegable4" id="listadesplegable4" style="display: none;"> 
                     <b><li><a href="#">Deportivos</a></li>
-                     <li><a href="#">Escolar</a></li>
-                     <li><a href="#">Casuales</a></li>
-                     <li><a href="#">Formales</a></li></b> 
-                 </ul>
-              
+                        <li><a href="#">Escolar</a></li>
+                        <li><a href="#">Casuales</a></li>
+                        <li><a href="#">Formales</a></li></b> 
+                    </ul>
+                
             </nav>
         </div>
 
@@ -265,49 +249,47 @@
             </nav>
         </div>
     
-       </div>
-        
-
-    <!--mensaje-->
-    <div class="div_msagregarp_close" id="div_msagregarp_close" >
-        <div>
-           <span class="material-icons" id="icn_cerrarmsagregarp" > 
-                check_circle   
-            </span>
         </div>
+        <!---------------------MENSAJE DE PRODUCTO AGREGADO---------------------->
+        <div class="div_msagregarp_close" id="div_msagregarp_close" >
+            <div>
+               <span class="material-icons" id="icn_cerrarmsagregarp" > 
+                    check_circle   
+                </span>
+            </div>
+                
+            <div>
+               <label>Producto agregado con exito</label>
+            </div>
             
-        <div>
-           <label>Producto agregado con exito</label>
+          <div>
+               <span class="material-icons" id="iconcerrar_msg" style="cursor: pointer;" >
+                    close
+               </span>
+          </div> 
+     
+        </div>
+        <!--DATOS EMPRESA-->
+        <div class="div_datos">
+            <label class="lbl_siguenos" for="">SÍGUENOS</label>
+            <br>
+            <div class="div_redes">
+                <button onclick="window.location.href='https://www.facebook.com/'">
+                    <img src="./imagenes/facebook.png" alt="">
+                </button>
+                <button onclick="window.location.href='https://www.instagram.com/'">
+                    <img src="./imagenes/instagram.png" alt="">
+                </button>
+                <button onclick="window.location.href='https://twitter.com/?lang=es'">
+                    <img src="./imagenes/twiter.png" alt="">
+                </button>
+            </div>
+            <i><b><p>© TODOS LOS DERECHOS RESERVADOS <br> 
+                Shoeshop de Colombia S.A. Calle 99 11A-32 Pasto Colombia Teléfono: 3166135036 E-Mail: www.sshop@hotmail.com.co </br></p></i></b>
+                <label class="lbl_compra" for="">COMPRA 100% SEGURA ✔</label>
         </div>
         
-      <div>
-           <span class="material-icons" id="iconcerrar_msg" style="cursor: pointer;" >
-                close
-           </span>
-      </div> 
- 
     </div>
-    <!--DATOS EMPRESA-->
-    <div class="div_datos">
-        <label class="lbl_siguenos" for="">SÍGUENOS</label>
-        <br>
-        <div class="div_redes">
-            <button onclick="window.location.href='https://www.facebook.com/'">
-                <img src="./imagenes/facebook.png" alt="">
-            </button>
-            <button onclick="window.location.href='https://www.instagram.com/'">
-                <img src="./imagenes/instagram.png" alt="">
-            </button>
-            <button onclick="window.location.href='https://twitter.com/?lang=es'">
-                <img src="./imagenes/twiter.png" alt="">
-            </button>
-        </div>
-        <i><b><p>© TODOS LOS DERECHOS RESERVADOS <br> 
-            Shoeshop de Colombia S.A. Calle 99 11A-32 Pasto Colombia Teléfono: 3166135036 E-Mail: www.sshop@hotmail.com.co </br></p></i></b>
-            <label class="lbl_compra" for="">COMPRA 100% SEGURA ✔</label>
-    </div>
-    
-   </div>
-   <script src="./empresa.js"></script>
+    <script src="./empresa.js"></script>
 </body>
 </html>

@@ -115,7 +115,7 @@ function cargarpagina(){
   
   function recargarpag(){
   
-      window.location="index.html";
+      window.location="index.php";
   }
   function paginaHombres(){
       window.location="productoshombre.php";
@@ -124,13 +124,13 @@ function cargarpagina(){
       window.location="productosmujeres.php";
   }
   function paginaNiños(){
-      window.location="productosniños.html";
+      window.location="productosniños.php";
   }
   function paginaNiñas(){
-      window.location="productosniñas.html";
+      window.location="productosniñas.php";
   }
   function paginaMarcas(){
-      window.location="marcas.html";
+      window.location="marcas.php";
   }
   /*paginas marcas------*/
   function cargar_nike(){
@@ -186,9 +186,9 @@ function cargarpagina(){
           window.location="productosrebook.php";
       }
       else if(value==niños){
-          window.location="productosniños.html";
+          window.location="productosniños.php";
       }else if(value==niñas){
-          window.location="productosniñas.html";
+          window.location="productosniñas.php";
       }else if(value==hombres){
           window.location="productoshombre.php";
       }else if(value==mujeres){
@@ -196,7 +196,7 @@ function cargarpagina(){
       }else if(value==newbalalnce){
           window.location="productosnbalance.php";
       }else{
-          window.location="noresults.html";
+          window.location="noresults.php";
       }
   
   }
@@ -208,7 +208,7 @@ function cargarpagina(){
   
   
   function mostrar_carrito(){
-      window.location = "carrito.html";
+      window.location = "carrito.php";
   
   }
   
@@ -223,7 +223,7 @@ function cargarpagina(){
   }
   function cerrarFormulario(){
       document.getElementById('div_formulario').style.display = 'none';
-      window.location="index.html";
+      window.location="index.php";
   }
   function mostrarLogin(){
      

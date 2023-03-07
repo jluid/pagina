@@ -40,17 +40,16 @@ $dbname = 'zapateriadb';
                 </span>
             </button>
         </div>
-        <!--iconos del menu principal-->
-        <div class="div_opciones">
+       <!--iconos del menu principal-->
+       <div class="div_opciones">
+            <p>iniciar sesión</p>
             <div class="div_isesion" id="div_isesion" >
+                
                 <span  class="material-icons" id="icon_isesion">
                     account_circle
                 </span>
-                 
-                
-                 
             </div>     
-    
+            <p>carrito</p>
             <div class="div_carritocompras" id="div_carritocompras">
                 <span class="material-icons" id="icon_carritocompras">
                     shopping_cart
@@ -345,8 +344,7 @@ $dbname = 'zapateriadb';
 <?php } ?> 
 
 <?php function usuario_registrado(&$usuario){ ?>
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -377,7 +375,7 @@ $dbname = 'zapateriadb';
         </div>
         <!--iconos del menu principal-->
         <div class="div_opciones">
-            <p> <?php echo $usuario ?></p>
+            <p><?php echo $usuario; ?></p>
             <div class="div_isesion" id="div_isesion" >
                 
                 <span  class="material-icons" id="icon_isesion">
@@ -401,7 +399,7 @@ $dbname = 'zapateriadb';
     <!--SUBMENÚ-->
     <div class="submenu">
         <ul class="lish_categorias"> 
-            <li id="cat_hombres"><a  id="s_hombres">Hombres</a></li>
+            <li id="cat_hombres"><a  id="s_hombres" onclick="">Hombres </a></li>
             <li id="cat_mujeres"><a  id="s_mujeres">Mujeres</a></li>
             <li id="cat_niños"><a  id="s_niños">Niños</a></li>
             <li id="cat_niñas"><a  id="s_niñas">Niñas</a></li>
@@ -500,7 +498,7 @@ $dbname = 'zapateriadb';
                 <label class="lbl_marca" for="">Puma</label>
                 <label for="">zapatillas puma casual para hombre</label>
                 <p>$259,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
+                <button id="btn_agregarc" onclick="cargarpagina();">agregar al carrito</button>
             </div>
             <div class="producto_2">
                 <img src="./imagenes/producto2.jpg" alt="">
@@ -562,7 +560,8 @@ $dbname = 'zapateriadb';
                         error   
                     </span>
                 </div>
-                <div><label>Selecciona tus opciones para agregar el producto al carrito</label></div>
+                <div>
+                    <label>Selecciona tus opciones para agregar el producto al carrito</label></div>
                 <div>  
                     <span class="material-icons" id="iconcerrar_compra" style="cursor: pointer;" >
                     close
@@ -571,12 +570,11 @@ $dbname = 'zapateriadb';
               
             </div>
             <div class="div_descripcioncompra">
-                <div class="producto_8.1">
-                    <img src="./imagenes/producto8.jpg" alt="" style="width: 20%;">
-                    <label class="lbl_marca" for="">Lacoste</label>
-                    <br>
-                    <label for="">zapatos casuales unisex lacoste de lona</label>
-                    <p>$199,900</p>
+                <div class="producto_1">
+                    <img src="./imagenes/producto1.jpg" alt="">
+                    <label class="lbl_marca" for="">Puma</label>
+                    <label for="">zapatillas puma casual para hombre</label>
+                    <p>$259,900</p>
                 </div>
             </div>
             <div class="div_tallascompra">
@@ -584,7 +582,8 @@ $dbname = 'zapateriadb';
                 <input type="number"  min="38" max="42">
                 <label for="Color">Color</label>
                 <input type="color" id="" class="radio_color" checked>
-
+                <label>Cantidad  </label>
+                <input type="number"  min="1" max="100">
             </div>
             <div class="div_btnagregarcar">
                 <button id="btn_agregarcarrito">AGREGAR AL CARRITO</button> 
@@ -652,11 +651,11 @@ $dbname = 'zapateriadb';
                 <nav>
                  
                     <ul class="listadesplegable5" id="listadesplegable5" style="display: none;"> 
-                        <b><li><a href="productosnike.html" id="id_nike">Nike</a></li>
-                           <li><a href="productosadidas.html" id="id_adidas">Adidas</a></li>
-                           <li><a href="productospuma.html" id="id_puma" >Puma</a></li>
-                           <li><a href="productosnbalance.html " id="id_newbalance">New Balance</a></li>
-                           <li><a href="productosrebook.html" id = "id_rebook">Rebook</a></li>
+                        <b><li><a href="productosnike.php/" id="id_nike">Nike</a></li>
+                           <li><a href="productosadidas.php" id="id_adidas">Adidas</a></li>
+                           <li><a href="productospuma.php" id="id_puma" >Puma</a></li>
+                           <li><a href="productosnbalance.php " id="id_newbalance">New Balance</a></li>
+                           <li><a href="productosrebook.php" id = "id_rebook">Rebook</a></li>
                        </b>   
                     </ul>
                   
