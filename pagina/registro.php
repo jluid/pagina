@@ -13,8 +13,13 @@
     
     if($email!=$cofemail_usuario){
         
-        cargarpagina();
-        exit();
+        echo'
+            <script>
+            alert("los correos no coinciden, por favor intentelo nuevamente"); 
+            window.location = "index.php";
+            </script>
+            ';
+            exit();
     }else{
 
         if($password!=$confpass_usuario){

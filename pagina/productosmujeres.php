@@ -195,81 +195,7 @@
         </div>
        
        
-        <!-----------------------CATEGORIAS------------------------->
-       
-           <div class="div_categorias">
-            <div class="respmenu" id="div_mhombres">
-                <nav>
-                    <ul class="listadesplegable1" id="listadesplegable1" style="display: none;"> 
-                        <li><b><a href="#">Deportivos</a></li></b>
-                        <li><b><a href="#">Guayos</a></li></b>
-                        <li><b><a href="#">Casuales</a></li></b>
-                        <li><b><a href="#">Formales</a></li></b>
-                    </ul>
-                </nav>
-            </div>
-    
-            <div class="respmenu" id="div_mmujeres">
-                <nav>
-                 
-                    <ul class="listadesplegable2" id="listadesplegable2" style="display: none;"> 
-                        <b><li><a href="#">Deportivos</a></li>
-                         <li><a href="#">Tacones</a></li>
-                         <li><a href="#">Casuales</a></li>
-                         <li><a href="#">Formales</a></li></b> 
-                     </ul>
-                  
-                </nav>
-            </div>
-    
-            <div class="respmenu" id="div_mniños">
-                <nav>
-                 
-                    <ul class="listadesplegable3" id="listadesplegable3" style="display: none;"> 
-                        <b> <li><a href="#">Deportivos</a></li>
-                            <li><a href="#">Escolar</a></li>
-                            <li><a href="#">Casuales</a></li>
-                            <li><a href="#">Formales</a></li> 
-                        </b>
-                    </ul> 
-                  
-                </nav>
-            </div>
-    
-            
-            <div class="respmenu" id="div_mniñas">
-
-                <nav>
-                    <ul class="listadesplegable4" id="listadesplegable4" style="display: none;"> 
-                        <b><li><a href="#">Deportivos</a></li>
-                         <li><a href="#">Escolar</a></li>
-                         <li><a href="#">Casuales</a></li>
-                         <li><a href="#">Formales</a></li></b> 
-                     </ul>
-                  
-                </nav>
-            </div>
-    
-           
-            <div class="respmenu" id="div_m">
-
-                <nav>
-                 
-                    <ul class="listadesplegable5" id="listadesplegable5" style="display: none;"> 
-                        <b><li><a href="productosnike.php" id="id_nike">Nike</a></li>
-                           <li><a href="productosadidas.php" id="id_adidas">Adidas</a></li>
-                           <li><a href="productospuma.php" id="id_puma" >Puma</a></li>
-                           <li><a href="productosnbalance.php " id="id_newbalance">New Balance</a></li>
-                           <li><a href="productosrebook.php" id = "id_rebook">Rebook</a></li>
-                       </b>   
-                    </ul>
-                  
-                </nav>
-            </div>
         
-           </div>
-            
-    
         <!--mensaje-->
         <div class="div_msagregarp_close" id="div_msagregarp_close" >
             <div>
@@ -310,6 +236,7 @@
         </div>
         
     </div>
-    <script src="./empresa.js"></script>
+    <script src="./javascript/empresa.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

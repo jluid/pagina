@@ -87,7 +87,7 @@ body{
    gap: 20px;
    padding-right: 15px;
  }
- /*div iniciar sesion,envios y carrito*/
+ /*div iniciar sesion y carrito*/
  .div_opciones div{
    width: 35px;
    height: 35px;
@@ -99,7 +99,10 @@ body{
    font-size: 35px;
    margin-bottom: 0;
  }
- 
+ .div_opciones p:hover{
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
  
  
  
@@ -130,11 +133,7 @@ body{
   
   
 }
-/*efecto para lista horizontal*/
-.submenu .lish_categorias li:hover{
- border-bottom: 1px solid white;
 
-}
 
 .submenu .lish_categorias li a{
   color:white;
@@ -145,6 +144,12 @@ body{
   cursor: pointer;
   
 }
+
+/*efecto para lista horizontal*/
+.submenu .lish_categorias li a:hover{
+  border-bottom: 1px solid white;
+ 
+ }
    /*--------------------------CUERPO-----------------------------------------------------------------*/
    /*div cuerpo */
    .div_cuerpo{
@@ -402,54 +407,7 @@ body{
      height: 43px;
    }
    
-   /*-------------------------------CATEGORIAS HOMBRES,MUJERES,NIÑOS,NIÑAS Y MARCAS------------------------------------------*/
  
-  /*-------------LISTAS DESPLEGABLES----------*/
-  .div_categorias{
-    display: flex;
-    gap: 10px;
-    width: 60%;
-    align-items: start;
-    background-color: transparent;
-    position: absolute;
-    top: 22%;
-    left: 27%;
-    gap: 15px;
-    margin-top: 0%;
-
-   
-  }
-  .div_categorias .respmenu{
-    margin-top: 0%;
-    width: 100px;
-   
-  }
-
-  .div_categorias div ul{
-    margin-top: 0%;
-    list-style: none;
-    width: 100%;
-    
-   
-    }
- 
-  .respmenu a {
-    color: inherit;
-    justify-content: start;
-    margin-left: -50%;
-    display: flex;
-    text-decoration: none;
-    flex-direction: column;
-    padding: 5px 10px;
-    width: 100%;
-    background: white;
-    font-variant: small-caps;
-    list-style: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  .respmenu a:hover {
-    background-color: rgb(185, 185, 207);
-  }
   
       /*--------------------------------PRODUCTOS DESTACADOS-----------------------------------------*/
    .div_destacados{
@@ -629,7 +587,7 @@ body{
   }
    
   .div_mostrarcompra button{
-    background-color: rgb(248, 251, 38);
+    background-color: rgb(145, 235, 135);
     color: white;
     display:flex;
     align-items: center;

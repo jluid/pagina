@@ -2,8 +2,6 @@
 body{
     margin: 0px;
     padding: 0px;
-   
-  
 }
 .menu_principal{
    
@@ -99,7 +97,10 @@ body{
   margin-bottom: 0;
 }
 
-
+.div_opciones p:hover{
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
 
 
 /*-----------------------------------SUBMENÚ---------------------------------------------------*/
@@ -129,11 +130,7 @@ body{
     
     
   }
-  /*efecto para lista horizontal*/
-  .submenu .lish_categorias li:hover{
-   border-bottom: 1px solid white;
-
-  }
+  
  
   .submenu .lish_categorias li a{
     color:white;
@@ -144,6 +141,12 @@ body{
     cursor: pointer;
     
   }
+
+  /*efecto para lista horizontal*/
+  .submenu .lish_categorias li a:hover{
+    border-bottom: 1px solid white;
+ 
+   }
   /*--------------------------CUERPO-----------------------------------------------------------------*/
   /*div cuerpo */
   .div_cuerpo{
@@ -399,115 +402,96 @@ body{
     height: 43px;
   }
   
-  /*-------------------------------CATEGORIAS HOMBRES,MUJERES,NIÑOS,NIÑAS Y MARCAS------------------------------------------*/
 
-  /*-------------LISTAS DESPLEGABLES----------*/
-  .div_categorias{
-    display: flex;
-    gap: 10px;
-    width: 60%;
-    align-items: start;
-    background-color: transparent;
-    position: absolute;
-    top: 22%;
-    left: 27%;
-    gap: 15px;
-    margin-top: 0%;
 
+      /*--------------------------------PRODUCTOS DESTACADOS-----------------------------------------*/
+      .div_destacados{
+        background-color:  rgb(228, 237, 245);
+        width: 100%;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 270px 270px 270px 270px;
+        grid-template-rows: 400px ;
+        gap: 10px;
+        padding-bottom: 15px;
+      
+      }
+      .div_destacados div{
+       background-color: white;
+       align-items: center;
+       display: flex;
+       flex-direction: column;
+       gap: 7px;
+       padding-bottom: 40px;
+      }
+      .div_destacados div:hover{
+       border: 5px solid white;
+        
+      }
+      
+      .div_marcas{
+         width: 100%;
+         height: fit-content;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 10px;
+      } 
+      .div_marcas button{
+       background-color: aliceblue;
+       border: none;
+       cursor: pointer;
+      }
+      .div_marcas  img{
+       width: 110px;
+       height: 110px;
+       border-radius: 98px;
+       border: 1px solid black;
    
-  }
-  .div_categorias .respmenu{
-    margin-top: 0%;
-    width: 100px;
+      }
+      .div_destacados div img{
    
-  }
-
-  .div_categorias div ul{
-    margin-top: 0%;
-    list-style: none;
-    width: 100%;
+        width: 200x;
+        height: 200px;
+      }
+      h2{
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
     
-   
-    }
- 
-  .respmenu a {
-    color: inherit;
-    justify-content: start;
-    margin-left: -50%;
-    display: flex;
-    text-decoration: none;
-    flex-direction: column;
-    padding: 5px 10px;
-    width: 100%;
-    background: white;
-    font-variant: small-caps;
-    list-style: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  .respmenu a:hover {
-    background-color: rgb(185, 185, 207);
-  }
-
-  /*--------------------------------PRODUCTOS DESTACADOS-----------------------------------------*/
-  .div_destacados{
-    background-color:  rgb(228, 237, 245);
-    width: 100%;
-    height: fit-content;
-    display: grid;
-    grid-template-columns: 270px 270px 270px 270px;
-    grid-template-rows: 400px auto;
-    gap: 10px;
-  
-  }
-
-  
-  h2{
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 0;
-    margin-top: 0;
-    background-color: white;
-  }
-
-  .div_destacados div{
-   
-    background-color: white;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+     
+      .lbl_marca{
+        
+        font-size: large;
+        font-weight: bold;
+      }
+      .div_destacados div img{
+        background-color: rgb(228, 237, 245);
+        
+      }
+     
+      .div_destacados div p{
+        color: red;
+      }
     
-  }
-  .lbl_marca{
-    
-    font-size: large;
-    font-weight: bold;
-  }
-  .div_destacados div img{
-    background-color: rgb(228, 237, 245);
-    
-  }
- 
-  .div_destacados div p{
-    color: red;
-  }
-
-  /*boton agregar al carrito destacados*/
-  .div_destacados div button{
-    border: none;
-    border-radius: 3px;
-    height: 35px;
-    width: 150px;
-    background-color: rgb(20, 202, 139);
-    color: white;
-    cursor: pointer;
-  }
-  .div_destacados div  button:hover{
-   border: 1px solid black;
-   height: 40px;
-   width: 160px;
-   font-size: 15px;
-  }
+      /*boton agregar al carrito destacados*/
+      .div_destacados div button{
+        border: none;
+        border-radius: 3px;
+        height: 35px;
+        width: 150px;
+        background-color: rgb(20, 202, 139);
+        color: white;
+        cursor: pointer;
+      }
+      .div_destacados div  button:hover{
+       border: 1px solid black;
+       height: 40px;
+       width: 160px;
+       font-size: 15px;
+      }
   /* ------------------ABRIR COMPRA--------------------------*/
   .div_mostrarcompra{
     display: flex;
@@ -598,7 +582,7 @@ body{
   }
    
   .div_mostrarcompra button{
-    background-color: skyblue;
+    background-color: rgb(145, 235, 135);
     color: white;
     display:flex;
     align-items: center;
@@ -662,115 +646,66 @@ body{
   /*--------------CONTACTANOS----------*/
   .div_datos{
     background-color: white;
-    width: 100%;
-    height: 150px;
-    margin-top: 15px;
-    padding-top: 10px;
-   
-  }
-  .lbl_siguenos{
-    font-size: large;
-    font-weight: bold;
-    border: none;
+     width: 100%;
+     height: 150px;
+     
     
-  }
-  .lbl_compra{
-    font-size: large;
-    font-weight: bold;
-    border: none;
-    
-
-  }
-  .div_datos p{
-    font-size: small;
+   }
+   .lbl_siguenos{
+     font-size: large;
+     font-weight: bold;
+     border: none;
+     
+   }
+   .lbl_compra{
+     font-size: large;
+     font-weight: bold;
+     border: none;
+     
  
-    
-  }
-  /*div para las redes sociales*/
-  .div_redes{
-    display: flex;
-    gap: 10px;
-    width: 200px;
-
-  }
-  /*botones de acceso a redes sociales*/
-  .div_redes button{
-    width: 40px;
-    height: 30px;
-    border: none;
-    cursor: pointer;
-  }
-  .div_redes button img{
-    width: 100%;
-    height: 100%;
-  }
-  /*div para las redes sociales*/
-  .div_redes{
-    display: flex;
-    gap: 10px;
-    width: 200px;
-  }
-  /*botones de acceso a redes sociales*/
-  .div_redes button{
-    width: 40px;
-    height: 30px;
-    border: none;
-    cursor: pointer;
-  }
-  .div_redes button img{
-    width: 100%;
-    height: 100%;
-  }
-  /*alerta*/
-
-  .alerta_open{
-    width:200px ;
-    height: 80px;
-    background-color: green;
-    color: white;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .alerta_close{
-    display: none;
-    
-  }
-  /*-----------------PARA MOVILES-------------------------*/
-  /*MENU PRINCIPAL*/
-  /*div iniciar sesion*/
-  @media (max-width: 420px) {
-    .div_isesion{
-
-      display: none;
-    }
-    .div_carrito{
-      display: none;
-    }
-    
-  }
-  @media (max-width:600px) {
-    .submenu{
-      background-color:rgb(215, 43, 43);
-      width: 100%;
-      height: fit-content;
-      border-top: 5px solid red;
-      display: flex;
-      justify-content: center;
-  }
-    .submenu .lish_categorias {
-      width: 90%;
-      list-style: none;
-      gap: 20px;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      justify-content: start;
-      
-    }
-    
-  }
+   }
+   .div_datos p{
+     font-size: small;
+  
+     
+   }
+   /*div para las redes sociales*/
+   .div_redes{
+     display: flex;
+     gap: 10px;
+     width: 200px;
+ 
+   }
+   /*botones de acceso a redes sociales*/
+   .div_redes button{
+     width: 40px;
+     height: 30px;
+     border: none;
+     cursor: pointer;
+   }
+   .div_redes button img{
+     width: 100%;
+     height: 100%;
+   }
+   /*div para las redes sociales*/
+   .div_redes{
+     display: flex;
+     gap: 10px;
+     width: fit-content;
+   }
+   /*botones de acceso a redes sociales*/
+   .div_redes button{
+     width: 40px;
+     height: 30px;
+     border: none;
+     cursor: pointer;
+   }
+   .div_redes button img{
+     width: 100%;
+     height: 100%;
+   }
+  
+  
 
 
 

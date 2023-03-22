@@ -296,6 +296,6 @@
         </div>
         
     </div>
-    <script src="./empresa.js"></script>
+    <script src="./javascript/empresa.js"></script>
 </body>
 </html>

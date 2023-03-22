@@ -3,6 +3,8 @@
   include('db.php');
   $con=conectar();
 
+  $query = "SELECT id_producto, marca_producto, descripcion_producto, precio,genero,imagen,destacado FROM `productos` WHERE destacado='si'";
+  $result = mysqli_query($con, $query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,14 +37,22 @@
         </div>
         <!--iconos del menu principal-->
         <div class="div_opciones">
-            <p>iniciar sesión</p>
+        <?php
+           if (isset($_GET['id'])) {
+            $usuario = $_GET['id'];
+            echo "<p>$usuario</p>";
+        } else {
+            echo "<p id >iniciar sesión</p>";
+        }
+        ?>
+            
             <div class="div_isesion" id="div_isesion" >
                 
                 <span  class="material-icons" id="icon_isesion">
                     account_circle
                 </span>
             </div>     
-            <p>carrito</p>
+            <p id="p_carrito" >carrito</p>
             <div class="div_carritocompras" id="div_carritocompras">
                 <span class="material-icons" id="icon_carritocompras">
                     shopping_cart
@@ -50,10 +60,6 @@
             </div>
             
         </div>
-        <div class="alerta_close" id="alerta">
-            <h6>Registro Exitoso!</h6>
-        </div>
-        <!---->
        
     </div>
     <!--SUBMENÚ-->
@@ -151,66 +157,20 @@
             </span>
             Destacados
         </h2>
-       <!--DIV DESTACADOS-->
+            <!--DIV DESTACADOS-->
         <div class="div_destacados">
-            <div class="producto_1">
-                <img src="./imagenes/producto1.jpg" alt="">
-                <label class="lbl_marca" for="">Puma</label>
-                <label for="">zapatillas puma casual para hombre</label>
-                <p>$259,900</p>
-                <button id="btn_agregarc" onclick="cargarpagina();">agregar al carrito</button>
-            </div>
-            <div class="producto_2">
-                <img src="./imagenes/producto2.jpg" alt="">
-                <label class="lbl_marca" for="">Rebook</label>
-                <label for="">Rebook lite 3.0 tenis de hombre </label>
-                <p>$159,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_3">
-                <img src="./imagenes/adidas_3.jpg" alt="">
-                <label class="lbl_marca" for="">Adidas</label>
-                <label for="">zapatillas deportivas marca adidas</label>
-                <p>$289,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_4">
-                <img src="./imagenes/producto4.jpg" alt="">
-                <label class="lbl_marca" for="">Puma</label>
-                <label for="">zapatos puma casual para hombre</label>
-                <p>$179,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_5">
-                <img src="./imagenes/producto5.jpg" alt="">
-                <label class="lbl_marca"> Nike</label>
-                <label for="">zapatillas deportivas nike suketoII</label>
-                <p>$269,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_6">
-                <img src="./imagenes/producto6.jpg" alt="">
-                <label class="lbl_marca" for="">New Balance</label>
-                <label for="">zapatillas deportivas mujer  new balance</label>
-                <p>$189,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_7">
-                <img src="./imagenes/producto7.jpg" alt="">
-                <label class="lbl_marca"> Nike</label>
-                <label for="">zapatillas deportivas nike zoom</label>
-                <p>$279,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
-            </div>
-            <div class="producto_8">
-                <img src="./imagenes/producto8.jpg" alt="">
-                <label class="lbl_marca" for="">Lacoste</label>
-                <label for="">zapatos casuales unisex lacoste de lona</label>
-                <p>$199,900</p>
-                <button id="btn_agregarc">agregar al carrito</button>
+            <?php foreach ($result as $row) { ?>
                 
-            </div>
-           
+                <div class="mis_productos">
+                    <img src="<?php echo $row['imagen'];?>" alt="">
+                    <label class="lbl_marca" for=""><?php echo $row['marca_producto'];?></label>
+                    <label for=""><?php echo $row['descripcion_producto']; ?></label>
+                    <p><?php echo $row['precio'];?></p>
+
+                    <button ="agregar_carrito" >agregar al carrito</button>
+                </div>
+                
+            <?php } ?>
         </div>
         <!--OPCIONES DE COMPRA-->
         <div class="div_mostrarcompra" id="mostrar_compra" style="display: none;" >
@@ -250,79 +210,6 @@
             </div>
             
         </div>
-       
-       
-        <!-----------------------CATEGORIAS------------------------->
-       
-           <div class="div_categorias">
-            <div class="respmenu" id="div_mhombres">
-                <nav>
-                    <ul class="listadesplegable1" id="listadesplegable1" style="display: none;"> 
-                        <li><b><a href="#">Deportivos</a></li></b>
-                        <li><b><a href="#">Guayos</a></li></b>
-                        <li><b><a href="#">Casuales</a></li></b>
-                        <li><b><a href="#">Formales</a></li></b>
-                    </ul>
-                </nav>
-            </div>
-    
-            <div class="respmenu" id="div_mmujeres">
-                <nav>
-                 
-                    <ul class="listadesplegable2" id="listadesplegable2" style="display: none;"> 
-                        <b><li><a href="#">Deportivos</a></li>
-                         <li><a href="#">Tacones</a></li>
-                         <li><a href="#">Casuales</a></li>
-                         <li><a href="#">Formales</a></li></b> 
-                     </ul>
-                  
-                </nav>
-            </div>
-    
-            <div class="respmenu" id="div_mniños">
-                <nav>
-                 
-                    <ul class="listadesplegable3" id="listadesplegable3" style="display: none;"> 
-                        <b> <li><a href="#">Deportivos</a></li>
-                            <li><a href="#">Escolar</a></li>
-                            <li><a href="#">Casuales</a></li>
-                            <li><a href="#">Formales</a></li> 
-                        </b>
-                    </ul> 
-                  
-                </nav>
-            </div>
-    
-            
-            <div class="respmenu" id="div_mniñas">
-                <nav>
-                    <ul class="listadesplegable4" id="listadesplegable4" style="display: none;"> 
-                        <b><li><a href="#">Deportivos</a></li>
-                         <li><a href="#">Escolar</a></li>
-                         <li><a href="#">Casuales</a></li>
-                         <li><a href="#">Formales</a></li></b> 
-                     </ul>
-                  
-                </nav>
-            </div>
-    
-            <div class="respmenu" id="div_m">
-
-                <nav>
-                 
-                    <ul class="listadesplegable5" id="listadesplegable5" style="display: none;"> 
-                        <b><li><a href="productosnike.php/" id="id_nike">Nike</a></li>
-                           <li><a href="productosadidas.php" id="id_adidas">Adidas</a></li>
-                           <li><a href="productospuma.php" id="id_puma" >Puma</a></li>
-                           <li><a href="productosnbalance.php " id="id_newbalance">New Balance</a></li>
-                           <li><a href="productosrebook.php" id = "id_rebook">Rebook</a></li>
-                       </b>   
-                    </ul>
-                  
-                </nav>
-            </div>
-        
-           </div>
             
     
         <!--mensaje-->
@@ -342,11 +229,14 @@
                 </span>
             </div>
         </div>
-        <!--DATOS EMPRESA-->
-        <div class="div_datos">
+       
+        
+    </div>
+     <!--DATOS EMPRESA-->
+     <div class="div_datos">
             <label class="lbl_siguenos" for="">SÍGUENOS</label>
             <br>
-            <div class="div_redes">
+           <div class="div_redes">
                 <button onclick="window.location.href='https://www.facebook.com/'">
                     <img src="./imagenes/facebook.png" alt="">
                 </button>
@@ -359,11 +249,11 @@
             </div>
             <i><b><p>© TODOS LOS DERECHOS RESERVADOS <br> 
                 Shoeshop de Colombia S.A. Calle 99 11A-32 Pasto Colombia Teléfono: 3166135036 E-Mail: www.sshop@hotmail.com.co </br></p></i></b>
-                <label class="lbl_compra" for="">COMPRA 100% SEGURA ✔</label>
+                <label class="lbl_compra" for="">COMPRA 100% SEGURA ✔</label> 
         </div>
-        
-    </div>
-    <script src="./empresa.js"></script>
+    <script src="./javascript/empresa.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 </html>
 
